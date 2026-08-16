@@ -220,6 +220,9 @@ __marimo__/
 # Aider
 .aider.*
 
+# Agent
+plans/
+
 # Rune
 .rune/*
 !.rune/config
