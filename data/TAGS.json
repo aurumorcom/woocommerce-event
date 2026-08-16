@@ -1,0 +1,200 @@
+{
+    "namespace": "wc/v3",
+    "methods": [
+        "GET",
+        "POST"
+    ],
+    "endpoints": [
+        {
+            "methods": [
+                "GET"
+            ],
+            "args": {
+                "context": {
+                    "description": "Scope under which the request is made; determines fields present in response.",
+                    "type": "string",
+                    "enum": [
+                        "view",
+                        "edit"
+                    ],
+                    "default": "view",
+                    "required": false
+                },
+                "page": {
+                    "description": "Current page of the collection.",
+                    "type": "integer",
+                    "default": 1,
+                    "minimum": 1,
+                    "required": false
+                },
+                "per_page": {
+                    "description": "Maximum number of items to be returned in result set.",
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 1,
+                    "maximum": 100,
+                    "required": false
+                },
+                "search": {
+                    "description": "Limit results to those matching a string.",
+                    "type": "string",
+                    "required": false
+                },
+                "exclude": {
+                    "description": "Ensure result set excludes specific IDs.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "include": {
+                    "description": "Limit result set to specific ids.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "offset": {
+                    "description": "Offset the result set by a specific number of items. Applies to hierarchical taxonomies only.",
+                    "type": "integer",
+                    "required": false
+                },
+                "order": {
+                    "description": "Order sort attribute ascending or descending.",
+                    "type": "string",
+                    "default": "asc",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "required": false
+                },
+                "orderby": {
+                    "description": "Sort collection by resource attribute.",
+                    "type": "string",
+                    "default": "name",
+                    "enum": [
+                        "id",
+                        "include",
+                        "name",
+                        "slug",
+                        "term_group",
+                        "description",
+                        "count"
+                    ],
+                    "required": false
+                },
+                "hide_empty": {
+                    "description": "Whether to hide resources not assigned to any products.",
+                    "type": "boolean",
+                    "default": false,
+                    "required": false
+                },
+                "parent": {
+                    "description": "Limit result set to resources assigned to a specific parent. Applies to hierarchical taxonomies only.",
+                    "type": "integer",
+                    "required": false
+                },
+                "product": {
+                    "description": "Limit result set to resources assigned to a specific product.",
+                    "type": "integer",
+                    "default": null,
+                    "required": false
+                },
+                "slug": {
+                    "description": "Limit result set to resources with a specific slug.",
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "required": false
+                }
+            }
+        },
+        {
+            "methods": [
+                "POST"
+            ],
+            "args": {
+                "name": {
+                    "type": "string",
+                    "description": "Name for the resource.",
+                    "required": true
+                },
+                "slug": {
+                    "description": "An alphanumeric identifier for the resource unique to its type.",
+                    "type": "string",
+                    "required": false
+                },
+                "description": {
+                    "description": "HTML description of the resource.",
+                    "type": "string",
+                    "required": false
+                }
+            }
+        }
+    ],
+    "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "title": "product_tag",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier for the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "name": {
+                "description": "Tag name.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "slug": {
+                "description": "An alphanumeric identifier for the resource unique to its type.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "description": {
+                "description": "HTML description of the resource.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "count": {
+                "description": "Number of published products for the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            }
+        }
+    },
+    "_links": {
+        "self": [
+            {
+                "href": "https://abhigaming5z.capybaara.com/wp-json/wc/v3/products/tags"
+            }
+        ]
+    }
+}

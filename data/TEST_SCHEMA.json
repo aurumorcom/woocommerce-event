@@ -1,0 +1,11 @@
+{
+    "namespace": "wc/v3",
+    "endpoints": [],
+    "schema": {
+        "properties": {
+            "id": {
+                "type": "integer"
+            }
+        }
+    }
+}
