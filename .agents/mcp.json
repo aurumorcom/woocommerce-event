@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "probe": {
+      "disabled": false,
+      "timeout": 60,
+      "alwaysAllow": [
+        "search_code",
+        "extract_code",
+        "probe_search",
+        "probe_extract",
+        "probe_query",
+        "probe_symbols"
+      ],
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@probelabs/probe@latest",
+        "agent",
+        "--mcp"
+      ],
+      "env": {
+        "GOOGLE_GENERATIVE_AI_API_KEY": "${GOOGLE_GENERATIVE_AI_API_KEY}"
+      }
+    }
+  }
+}
