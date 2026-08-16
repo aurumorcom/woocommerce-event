@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"name":"Integ Category 7b86be"}'
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '32'
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/products/categories
+  response:
+    body:
+      string: '{"id":102,"name":"Integ Category 7b86be","slug":"integ-category-7b86be","parent":0,"description":"","display":"default","image":null,"menu_order":0,"count":0,"_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/products\/categories\/102","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/products\/categories"}]}}'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:10:52 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      location:
+      - https://badsyxn.capybaara.com/wp-json/wc/v3/products/categories/102
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+version: 1

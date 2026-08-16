@@ -1,0 +1,136 @@
+interactions:
+- request:
+    body: '{"name":"Event Stream: order.created","topic":"order.created","delivery_url":"https://ingress.aurumor.com/webhooks/woocommerce","secret":"whsec_live_12345","status":"active"}'
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '174'
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/webhooks
+  response:
+    body:
+      string: '{"id":1,"name":"Event Stream: order.created","status":"active","topic":"order.created","resource":"order","event":"created","hooks":["woocommerce_new_order"],"delivery_url":"https:\/\/ingress.aurumor.com\/webhooks\/woocommerce","date_created":"2026-08-17T00:47:46","date_created_gmt":"2026-08-16T19:17:46","date_modified":null,"date_modified_gmt":null,"_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/webhooks\/1","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/webhooks"}]}}'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:17:46 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      location:
+      - https://badsyxn.capybaara.com/wp-json/wc/v3/webhooks/1
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"name":"Event Stream: order.updated","topic":"order.updated","delivery_url":"https://ingress.aurumor.com/webhooks/woocommerce","secret":"whsec_live_12345","status":"active"}'
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '174'
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/webhooks
+  response:
+    body:
+      string: '{"id":2,"name":"Event Stream: order.updated","status":"active","topic":"order.updated","resource":"order","event":"updated","hooks":["woocommerce_update_order","woocommerce_order_refunded"],"delivery_url":"https:\/\/ingress.aurumor.com\/webhooks\/woocommerce","date_created":"2026-08-17T00:47:46","date_created_gmt":"2026-08-16T19:17:46","date_modified":null,"date_modified_gmt":null,"_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/webhooks\/2","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/webhooks"}]}}'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:17:46 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      location:
+      - https://badsyxn.capybaara.com/wp-json/wc/v3/webhooks/2
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+version: 1

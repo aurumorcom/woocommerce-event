@@ -1,0 +1,1 @@
+"""Categories internal integration tests."""

@@ -1,0 +1,152 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/orders?per_page=1
+  response:
+    body:
+      string: '[{"id":5900,"parent_id":0,"status":"failed","currency":"INR","version":"9.7.1","prices_include_tax":true,"date_created":"2025-03-29T19:27:59","date_modified":"2025-03-29T19:28:21","discount_total":"0.00","discount_tax":"0.00","shipping_total":"0.00","shipping_tax":"0.00","cart_tax":"0.00","total":"119.00","total_tax":"0.00","customer_id":0,"order_key":"wc_order_9FP0jjAYvvmZ6","billing":{"first_name":"Aryan","last_name":"Singh","company":"","address_1":"CHAK
+        KANCHANPUR, RAHIMAPUR","address_2":"2","city":"VAISHALI","state":"JH","postcode":"844502","country":"IN","email":"AQUIVEAL@GMAIL.COM","phone":"8935885359"},"shipping":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"","phone":""},"payment_method":"razorpay","payment_method_title":"Credit
+        Card\/Debit Card\/NetBanking","transaction_id":"","customer_ip_address":"2001:4490:401d:86a7:7467:c5a5:5d7a:9155","customer_user_agent":"Mozilla\/5.0
+        (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/134.0.0.0
+        Safari\/537.36","created_via":"checkout","customer_note":"","date_completed":null,"date_paid":null,"cart_hash":"bde608eb4f0ef756df8e8d8faa9ad830","number":"5900","meta_data":[{"id":12,"key":"is_magic_checkout_order","value":"no"},{"id":8,"key":"is_vat_exempt","value":"no"},{"id":9,"key":"wpml_language","value":"en"}],"line_items":[{"id":2,"name":"Red
+        puffer jacket","product_id":0,"variation_id":0,"quantity":1,"tax_class":"","subtotal":"119.00","subtotal_tax":"0.00","total":"119.00","total_tax":"0.00","taxes":[],"meta_data":[{"id":21,"key":"pa_size","value":"s","display_key":"Size","display_value":"S"}],"sku":null,"global_unique_id":null,"price":119,"image":{"id":0,"src":""},"parent_name":null}],"tax_lines":[],"shipping_lines":[],"fee_lines":[],"coupon_lines":[],"refunds":[],"payment_url":"https:\/\/badsyxn.capybaara.com\/checkout-2\/order-pay\/5900\/?pay_for_order=true&key=wc_order_9FP0jjAYvvmZ6","is_editable":false,"needs_payment":true,"needs_processing":false,"date_created_gmt":"2025-03-29T13:57:59","date_modified_gmt":"2025-03-29T13:58:21","date_completed_gmt":null,"date_paid_gmt":null,"currency_symbol":"\u20b9","_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders\/5900","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders"}],"email_templates":[{"embeddable":true,"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders\/5900\/actions\/email_templates"}]}}]'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-length:
+      - '2572'
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:10:53 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-wp-total:
+      - '1'
+      x-wp-totalpages:
+      - '1'
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/orders/5900
+  response:
+    body:
+      string: '{"id":5900,"parent_id":0,"status":"failed","currency":"INR","version":"9.7.1","prices_include_tax":true,"date_created":"2025-03-29T19:27:59","date_modified":"2025-03-29T19:28:21","discount_total":"0.00","discount_tax":"0.00","shipping_total":"0.00","shipping_tax":"0.00","cart_tax":"0.00","total":"119.00","total_tax":"0.00","customer_id":0,"order_key":"wc_order_9FP0jjAYvvmZ6","billing":{"first_name":"Aryan","last_name":"Singh","company":"","address_1":"CHAK
+        KANCHANPUR, RAHIMAPUR","address_2":"2","city":"VAISHALI","state":"JH","postcode":"844502","country":"IN","email":"AQUIVEAL@GMAIL.COM","phone":"8935885359"},"shipping":{"first_name":"","last_name":"","company":"","address_1":"","address_2":"","city":"","state":"","postcode":"","country":"","phone":""},"payment_method":"razorpay","payment_method_title":"Credit
+        Card\/Debit Card\/NetBanking","transaction_id":"","customer_ip_address":"2001:4490:401d:86a7:7467:c5a5:5d7a:9155","customer_user_agent":"Mozilla\/5.0
+        (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/134.0.0.0
+        Safari\/537.36","created_via":"checkout","customer_note":"","date_completed":null,"date_paid":null,"cart_hash":"bde608eb4f0ef756df8e8d8faa9ad830","number":"5900","meta_data":[{"id":12,"key":"is_magic_checkout_order","value":"no"},{"id":8,"key":"is_vat_exempt","value":"no"},{"id":9,"key":"wpml_language","value":"en"}],"line_items":[{"id":2,"name":"Red
+        puffer jacket","product_id":0,"variation_id":0,"quantity":1,"tax_class":"","subtotal":"119.00","subtotal_tax":"0.00","total":"119.00","total_tax":"0.00","taxes":[],"meta_data":[{"id":21,"key":"pa_size","value":"s","display_key":"Size","display_value":"S"}],"sku":null,"global_unique_id":null,"price":119,"image":{"id":0,"src":""},"parent_name":null}],"tax_lines":[],"shipping_lines":[],"fee_lines":[],"coupon_lines":[],"refunds":[],"payment_url":"https:\/\/badsyxn.capybaara.com\/checkout-2\/order-pay\/5900\/?pay_for_order=true&key=wc_order_9FP0jjAYvvmZ6","is_editable":false,"needs_payment":true,"needs_processing":false,"date_created_gmt":"2025-03-29T13:57:59","date_modified_gmt":"2025-03-29T13:58:21","date_completed_gmt":null,"date_paid_gmt":null,"currency_symbol":"\u20b9","_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders\/5900","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders"}],"email_templates":[{"embeddable":true,"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/orders\/5900\/actions\/email_templates"}]}}'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST, PUT, PATCH, DELETE
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-length:
+      - '2570'
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:10:53 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

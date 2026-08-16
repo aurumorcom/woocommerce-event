@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"name":"Integ Test Product 0bdf7f","sku":"TSHIRT-TEST-0bdf7f"}'
+    headers:
+      Authorization:
+      - DUMMY_AUTH_HEADER
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '63'
+      content-type:
+      - application/json
+      host:
+      - badsyxn.capybaara.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: https://badsyxn.capybaara.com/wp-json/wc/v3/products
+  response:
+    body:
+      string: '{"id":9237,"name":"Integ Test Product 0bdf7f","slug":"integ-test-product-0bdf7f","permalink":"https:\/\/badsyxn.capybaara.com\/product\/integ-test-product-0bdf7f\/","date_created":"2026-08-17T00:40:54","date_created_gmt":"2026-08-16T19:10:54","date_modified":"2026-08-17T00:40:54","date_modified_gmt":"2026-08-16T19:10:54","type":"simple","status":"publish","featured":false,"catalog_visibility":"visible","description":"","short_description":"","sku":"TSHIRT-TEST-0bdf7f","price":"","regular_price":"","sale_price":"","date_on_sale_from":null,"date_on_sale_from_gmt":null,"date_on_sale_to":null,"date_on_sale_to_gmt":null,"on_sale":false,"purchasable":false,"total_sales":0,"virtual":false,"downloadable":false,"downloads":[],"download_limit":-1,"download_expiry":-1,"external_url":"","button_text":"","tax_status":"taxable","tax_class":"","manage_stock":false,"stock_quantity":null,"backorders":"no","backorders_allowed":false,"backordered":false,"low_stock_amount":null,"sold_individually":false,"weight":"","dimensions":{"length":"","width":"","height":""},"shipping_required":true,"shipping_taxable":true,"shipping_class":"","shipping_class_id":0,"reviews_allowed":true,"average_rating":"0","rating_count":0,"upsell_ids":[],"cross_sell_ids":[],"parent_id":0,"purchase_note":"","categories":[{"id":16,"name":"Accessories","slug":"accessories"}],"brands":[],"tags":[],"images":[],"attributes":[],"default_attributes":[],"variations":[],"grouped_products":[],"menu_order":0,"price_html":"","related_ids":[9235],"meta_data":[],"stock_status":"instock","has_options":false,"post_password":"","global_unique_id":"","permalink_template":"https:\/\/badsyxn.capybaara.com\/product\/%pagename%\/","generated_slug":"integ-test-product-0bdf7f","_links":{"self":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/products\/9237","targetHints":{"allow":["GET","POST","PUT","PATCH","DELETE"]}}],"collection":[{"href":"https:\/\/badsyxn.capybaara.com\/wp-json\/wc\/v3\/products"}]}}'
+    headers:
+      access-control-allow-headers:
+      - Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+      access-control-expose-headers:
+      - X-WP-Total, X-WP-TotalPages, Link
+      allow:
+      - GET, POST
+      alt-svc:
+      - h3=":443"; ma=86400
+      cache-control:
+      - no-cache, must-revalidate, max-age=0, no-store, private
+      connection:
+      - keep-alive
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sun, 16 Aug 2026 19:10:55 GMT
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      link:
+      - <https://badsyxn.capybaara.com/wp-json/>; rel="https://api.w.org/"
+      location:
+      - https://badsyxn.capybaara.com/wp-json/wc/v3/products/9237
+      referrer-policy:
+      - same-origin
+      server:
+      - nginx
+      transfer-encoding:
+      - chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - master-only
+      x-robots-tag:
+      - noindex
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+version: 1
