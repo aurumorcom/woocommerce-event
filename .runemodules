@@ -1,0 +1,9 @@
+[runemodule ".agents/rules/language-python"]
+	url = https://github.com/aurumorcom/.agents/tree/main/rules/language-python
+	path = .agents/rules/language-python
+[runemodule ".agents/skills/python-logging/modules/python-logging"]
+	url = http://github.com/aurumorinc/python-logging/tree/main
+	path = .agents/skills/python-logging/modules/python-logging
+[runemodule ".agents/skills/python-event/modules/python-event"]
+	url = http://github.com/aurumorinc/python-event/tree/main
+	path = .agents/skills/python-event/modules/python-event

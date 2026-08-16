@@ -1,0 +1,133 @@
+"""Centralized canonical Kafka topics and CloudEvents event types."""
+
+# 12 Canonical Kafka Topics (Agnostic Broker Layer)
+TOPIC_PRODUCT: str = "product"
+TOPIC_PRODUCT_VARIANT: str = "product-variant"
+TOPIC_SALES_ORDER: str = "sales-order"
+TOPIC_ITEM_TAG: str = "item-tag"
+TOPIC_ITEM: str = "item"
+TOPIC_ITEM_ATTRIBUTE: str = "item-attribute"
+TOPIC_ITEM_ATTRIBUTE_VALUE: str = "item-attribute-value"
+TOPIC_ITEM_CATEGORY: str = "item-category"
+TOPIC_ITEM_PRICE: str = "item-price"
+TOPIC_CHANNEL: str = "channel"
+TOPIC_STOCK_LEVEL: str = "stock-level"
+TOPIC_MEDIA: str = "media"
+
+TOPICS: frozenset[str] = frozenset(
+    {
+        TOPIC_PRODUCT,
+        TOPIC_PRODUCT_VARIANT,
+        TOPIC_SALES_ORDER,
+        TOPIC_ITEM_TAG,
+        TOPIC_ITEM,
+        TOPIC_ITEM_ATTRIBUTE,
+        TOPIC_ITEM_ATTRIBUTE_VALUE,
+        TOPIC_ITEM_CATEGORY,
+        TOPIC_ITEM_PRICE,
+        TOPIC_CHANNEL,
+        TOPIC_STOCK_LEVEL,
+        TOPIC_MEDIA,
+    }
+)
+
+# Canonical CloudEvents 1.0 Event Types
+EVENT_TYPE_PRODUCT_CREATED: str = "product.created"
+EVENT_TYPE_PRODUCT_UPDATED: str = "product.updated"
+EVENT_TYPE_PRODUCT_DELETED: str = "product.deleted"
+
+EVENT_TYPE_PRODUCT_VARIANT_CREATED: str = "product-variant.created"
+EVENT_TYPE_PRODUCT_VARIANT_UPDATED: str = "product-variant.updated"
+EVENT_TYPE_PRODUCT_VARIANT_DELETED: str = "product-variant.deleted"
+
+EVENT_TYPE_SALES_ORDER_CREATED: str = "sales-order.created"
+EVENT_TYPE_SALES_ORDER_UPDATED: str = "sales-order.updated"
+EVENT_TYPE_SALES_ORDER_DELETED: str = "sales-order.deleted"
+
+EVENT_TYPE_ITEM_TAG_CREATED: str = "item-tag.created"
+EVENT_TYPE_ITEM_TAG_UPDATED: str = "item-tag.updated"
+EVENT_TYPE_ITEM_TAG_DELETED: str = "item-tag.deleted"
+
+EVENT_TYPE_ITEM_CREATED: str = "item.created"
+EVENT_TYPE_ITEM_UPDATED: str = "item.updated"
+EVENT_TYPE_ITEM_DELETED: str = "item.deleted"
+
+EVENT_TYPE_ITEM_ATTRIBUTE_CREATED: str = "item-attribute.created"
+EVENT_TYPE_ITEM_ATTRIBUTE_UPDATED: str = "item-attribute.updated"
+EVENT_TYPE_ITEM_ATTRIBUTE_DELETED: str = "item-attribute.deleted"
+
+EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_CREATED: str = "item-attribute-value.created"
+EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_UPDATED: str = "item-attribute-value.updated"
+EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_DELETED: str = "item-attribute-value.deleted"
+
+EVENT_TYPE_ITEM_CATEGORY_CREATED: str = "item-category.created"
+EVENT_TYPE_ITEM_CATEGORY_UPDATED: str = "item-category.updated"
+EVENT_TYPE_ITEM_CATEGORY_DELETED: str = "item-category.deleted"
+
+EVENT_TYPE_ITEM_PRICE_CREATED: str = "item-price.created"
+EVENT_TYPE_ITEM_PRICE_UPDATED: str = "item-price.updated"
+EVENT_TYPE_ITEM_PRICE_DELETED: str = "item-price.deleted"
+
+EVENT_TYPE_CHANNEL_CREATED: str = "channel.created"
+EVENT_TYPE_CHANNEL_UPDATED: str = "channel.updated"
+EVENT_TYPE_CHANNEL_DELETED: str = "channel.deleted"
+
+EVENT_TYPE_STOCK_LEVEL_CREATED: str = "stock-level.created"
+EVENT_TYPE_STOCK_LEVEL_UPDATED: str = "stock-level.updated"
+EVENT_TYPE_STOCK_LEVEL_DELETED: str = "stock-level.deleted"
+
+EVENT_TYPE_MEDIA_CREATED: str = "media.created"
+EVENT_TYPE_MEDIA_UPDATED: str = "media.updated"
+EVENT_TYPE_MEDIA_DELETED: str = "media.deleted"
+
+__all__ = [
+    "EVENT_TYPE_CHANNEL_CREATED",
+    "EVENT_TYPE_CHANNEL_DELETED",
+    "EVENT_TYPE_CHANNEL_UPDATED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_CREATED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_DELETED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_UPDATED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_CREATED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_DELETED",
+    "EVENT_TYPE_ITEM_ATTRIBUTE_VALUE_UPDATED",
+    "EVENT_TYPE_ITEM_CATEGORY_CREATED",
+    "EVENT_TYPE_ITEM_CATEGORY_DELETED",
+    "EVENT_TYPE_ITEM_CATEGORY_UPDATED",
+    "EVENT_TYPE_ITEM_CREATED",
+    "EVENT_TYPE_ITEM_DELETED",
+    "EVENT_TYPE_ITEM_PRICE_CREATED",
+    "EVENT_TYPE_ITEM_PRICE_DELETED",
+    "EVENT_TYPE_ITEM_PRICE_UPDATED",
+    "EVENT_TYPE_ITEM_TAG_CREATED",
+    "EVENT_TYPE_ITEM_TAG_DELETED",
+    "EVENT_TYPE_ITEM_TAG_UPDATED",
+    "EVENT_TYPE_ITEM_UPDATED",
+    "EVENT_TYPE_MEDIA_CREATED",
+    "EVENT_TYPE_MEDIA_DELETED",
+    "EVENT_TYPE_MEDIA_UPDATED",
+    "EVENT_TYPE_PRODUCT_CREATED",
+    "EVENT_TYPE_PRODUCT_DELETED",
+    "EVENT_TYPE_PRODUCT_UPDATED",
+    "EVENT_TYPE_PRODUCT_VARIANT_CREATED",
+    "EVENT_TYPE_PRODUCT_VARIANT_DELETED",
+    "EVENT_TYPE_PRODUCT_VARIANT_UPDATED",
+    "EVENT_TYPE_SALES_ORDER_CREATED",
+    "EVENT_TYPE_SALES_ORDER_DELETED",
+    "EVENT_TYPE_SALES_ORDER_UPDATED",
+    "EVENT_TYPE_STOCK_LEVEL_CREATED",
+    "EVENT_TYPE_STOCK_LEVEL_DELETED",
+    "EVENT_TYPE_STOCK_LEVEL_UPDATED",
+    "TOPICS",
+    "TOPIC_CHANNEL",
+    "TOPIC_ITEM",
+    "TOPIC_ITEM_ATTRIBUTE",
+    "TOPIC_ITEM_ATTRIBUTE_VALUE",
+    "TOPIC_ITEM_CATEGORY",
+    "TOPIC_ITEM_PRICE",
+    "TOPIC_ITEM_TAG",
+    "TOPIC_MEDIA",
+    "TOPIC_PRODUCT",
+    "TOPIC_PRODUCT_VARIANT",
+    "TOPIC_SALES_ORDER",
+    "TOPIC_STOCK_LEVEL",
+]

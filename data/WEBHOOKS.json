@@ -1,0 +1,288 @@
+{
+    "namespace": "wc/v3",
+    "methods": [
+        "GET",
+        "POST"
+    ],
+    "endpoints": [
+        {
+            "methods": [
+                "GET"
+            ],
+            "args": {
+                "context": {
+                    "description": "Scope under which the request is made; determines fields present in response.",
+                    "type": "string",
+                    "enum": [
+                        "view",
+                        "edit"
+                    ],
+                    "default": "view",
+                    "required": false
+                },
+                "page": {
+                    "description": "Current page of the collection.",
+                    "type": "integer",
+                    "default": 1,
+                    "minimum": 1,
+                    "required": false
+                },
+                "per_page": {
+                    "description": "Maximum number of items to be returned in result set.",
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 1,
+                    "maximum": 100,
+                    "required": false
+                },
+                "search": {
+                    "description": "Limit results to those matching a string.",
+                    "type": "string",
+                    "required": false
+                },
+                "after": {
+                    "description": "Limit response to resources published after a given ISO8601 compliant date.",
+                    "type": "string",
+                    "format": "date-time",
+                    "required": false
+                },
+                "before": {
+                    "description": "Limit response to resources published before a given ISO8601 compliant date.",
+                    "type": "string",
+                    "format": "date-time",
+                    "required": false
+                },
+                "exclude": {
+                    "description": "Ensure result set excludes specific IDs.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "include": {
+                    "description": "Limit result set to specific ids.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "offset": {
+                    "description": "Offset the result set by a specific number of items.",
+                    "type": "integer",
+                    "required": false
+                },
+                "order": {
+                    "description": "Order sort attribute ascending or descending.",
+                    "type": "string",
+                    "default": "desc",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "required": false
+                },
+                "orderby": {
+                    "description": "Sort collection by object attribute.",
+                    "type": "string",
+                    "default": "date",
+                    "enum": [
+                        "date",
+                        "id",
+                        "title"
+                    ],
+                    "required": false
+                },
+                "status": {
+                    "default": "all",
+                    "description": "Limit result set to webhooks assigned a specific status.",
+                    "type": "string",
+                    "enum": [
+                        "all",
+                        "active",
+                        "paused",
+                        "disabled"
+                    ],
+                    "required": false
+                }
+            }
+        },
+        {
+            "methods": [
+                "POST"
+            ],
+            "args": {
+                "name": {
+                    "description": "A friendly name for the webhook.",
+                    "type": "string",
+                    "required": false
+                },
+                "status": {
+                    "default": "active",
+                    "description": "Webhook status.",
+                    "type": "string",
+                    "enum": [
+                        "active",
+                        "paused",
+                        "disabled"
+                    ],
+                    "required": false
+                },
+                "topic": {
+                    "type": "string",
+                    "description": "Webhook topic.",
+                    "required": true
+                },
+                "secret": {
+                    "description": "Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default to a MD5 hash from the current user's ID|username if not provided.",
+                    "type": "string",
+                    "required": false
+                },
+                "delivery_url": {
+                    "type": "string",
+                    "description": "Webhook delivery URL.",
+                    "required": true
+                }
+            }
+        }
+    ],
+    "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "title": "webhook",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier for the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "name": {
+                "description": "A friendly name for the webhook.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "status": {
+                "description": "Webhook status.",
+                "type": "string",
+                "default": "active",
+                "enum": [
+                    "active",
+                    "paused",
+                    "disabled"
+                ],
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "topic": {
+                "description": "Webhook topic.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "resource": {
+                "description": "Webhook resource.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "event": {
+                "description": "Webhook event.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "hooks": {
+                "description": "WooCommerce action names associated with the webhook.",
+                "type": "array",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "string"
+                }
+            },
+            "delivery_url": {
+                "description": "The URL where the webhook payload is delivered.",
+                "type": "string",
+                "format": "uri",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "secret": {
+                "description": "Secret key used to generate a hash of the delivered webhook and provided in the request headers. This will default to a MD5 hash from the current user's ID|username if not provided.",
+                "type": "string",
+                "context": [
+                    "edit"
+                ]
+            },
+            "date_created": {
+                "description": "The date the webhook was created, in the site's timezone.",
+                "type": "date-time",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "date_created_gmt": {
+                "description": "The date the webhook was created, as GMT.",
+                "type": "date-time",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "date_modified": {
+                "description": "The date the webhook was last modified, in the site's timezone.",
+                "type": "date-time",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "date_modified_gmt": {
+                "description": "The date the webhook was last modified, as GMT.",
+                "type": "date-time",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            }
+        }
+    },
+    "_links": {
+        "self": [
+            {
+                "href": "https://abhigaming5z.capybaara.com/wp-json/wc/v3/webhooks"
+            }
+        ]
+    }
+}

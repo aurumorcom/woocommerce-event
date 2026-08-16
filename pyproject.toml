@@ -1,0 +1,92 @@
+[project]
+name = "woocommerce-event"
+version = "0.1.0"
+description = "Asymmetric Integration & Event Streaming Bridge for WooCommerce"
+requires-python = ">=3.11"
+dependencies = [
+    "python-event @ git+https://github.com/aurumorcom/python-event.git",
+    "python-logging @ git+https://github.com/aurumorinc/python-logging.git",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.2.0",
+    "pydantic-avro>=0.8.0",
+    "confluent-kafka>=2.4.0",
+    "cloudevents>=1.11.0",
+    "httpx>=0.27.0",
+    "tenacity>=8.3.0",
+    "structlog>=24.1.0",
+    "opentelemetry-api>=1.24.0",
+    "opentelemetry-sdk>=1.24.0",
+    "opentelemetry-exporter-otlp>=1.24.0",
+    "jinja2>=3.1.0",
+    "datamodel-code-generator>=0.25.0",
+    "wmill>=1.400.0",
+    "vcrpy>=6.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=1.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.15.16",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["packages/woocommerce-event/src/woocommerce_event"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pdm]
+save_strategy = "minimum"
+update_strategy = "eager"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=1.0.0",
+    "pytest-asyncio>=0.23.0",
+    "mkinit>=1.2.0",
+    "ruff>=0.15.16",
+    "hypothesis>=6.0.0",
+    "pytest-xdist>=3.0.0",
+    "pyrefly>=1.1.1",
+    "bump-my-version>=0.20.0",
+]
+
+[tool.pdm.scripts]
+"lint" = "ruff check packages/woocommerce-event/src scripts apps packages/woocommerce-event/tests apps/woocommerce-event-api/tests"
+"lint:fix" = "ruff check packages/woocommerce-event/src scripts apps packages/woocommerce-event/tests apps/woocommerce-event-api/tests --fix"
+"format" = "ruff format packages/woocommerce-event/src scripts apps packages/woocommerce-event/tests apps/woocommerce-event-api/tests"
+"format:check" = "ruff format packages/woocommerce-event/src scripts apps packages/woocommerce-event/tests apps/woocommerce-event-api/tests --check"
+"typecheck" = "pyrefly check packages/woocommerce-event/src"
+"test" = "pytest"
+"test:cov" = "pytest --cov=packages/woocommerce-event/src --cov-report=term-missing"
+"docker:up" = "docker compose up -d"
+"docker:down" = "docker compose down -v"
+"mkinit" = "mkinit packages/woocommerce-event/src/woocommerce_event --recursive -w"
+"bump:patch" = "bump-my-version bump patch --config-file bumpversion.toml"
+"bump:minor" = "bump-my-version bump minor --config-file bumpversion.toml"
+"bump:major" = "bump-my-version bump major --config-file bumpversion.toml"
+"validate" = { composite = ["format:check", "lint", "typecheck", "test"] }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = [
+    ".",
+    "packages/woocommerce-event/src",
+    "packages/woocommerce-event/tests",
+]
+testpaths = [
+    "packages/woocommerce-event/tests",
+    "apps/woocommerce-event-api/tests"
+]
+
+[tool.pyrefly]
+project-includes = [
+    "packages/woocommerce-event/src/**/*.py",
+    "scripts/**/*.py",
+    "apps/**/*.py",
+    "packages/woocommerce-event/tests/**/*.py",
+    "apps/woocommerce-event-api/tests/**/*.py",
+]

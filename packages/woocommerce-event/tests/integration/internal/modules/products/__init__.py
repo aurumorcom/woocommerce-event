@@ -1,0 +1,1 @@
+"""Products internal integration tests."""

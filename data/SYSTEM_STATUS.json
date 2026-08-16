@@ -1,0 +1,872 @@
+{
+    "namespace": "wc/v3",
+    "methods": [
+        "GET"
+    ],
+    "endpoints": [
+        {
+            "methods": [
+                "GET"
+            ],
+            "args": {
+                "context": {
+                    "description": "Scope under which the request is made; determines fields present in response.",
+                    "type": "string",
+                    "enum": [
+                        "view"
+                    ],
+                    "default": "view",
+                    "required": false
+                }
+            }
+        }
+    ],
+    "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "title": "system_status",
+        "type": "object",
+        "properties": {
+            "environment": {
+                "description": "Environment.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "home_url": {
+                        "description": "Home URL.",
+                        "type": "string",
+                        "format": "uri",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "site_url": {
+                        "description": "Site URL.",
+                        "type": "string",
+                        "format": "uri",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "store_id": {
+                        "description": "WooCommerce Store Identifier.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "version": {
+                        "description": "WooCommerce version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "log_directory": {
+                        "description": "Log directory.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "log_directory_writable": {
+                        "description": "Is log directory writable?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_version": {
+                        "description": "WordPress version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_multisite": {
+                        "description": "Is WordPress multisite?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_memory_limit": {
+                        "description": "WordPress memory limit.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_debug_mode": {
+                        "description": "Is WordPress debug mode active?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_cron": {
+                        "description": "Are WordPress cron jobs enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "wp_environment_type": {
+                        "description": "The WordPress environment type.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "language": {
+                        "description": "WordPress language.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "server_info": {
+                        "description": "Server info.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "server_architecture": {
+                        "description": "Server architecture.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "php_version": {
+                        "description": "PHP version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "php_post_max_size": {
+                        "description": "PHP post max size.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "php_max_execution_time": {
+                        "description": "PHP max execution time.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "php_max_input_vars": {
+                        "description": "PHP max input vars.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "curl_version": {
+                        "description": "cURL version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "suhosin_installed": {
+                        "description": "Is SUHOSIN installed?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "max_upload_size": {
+                        "description": "Max upload size.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "mysql_version": {
+                        "description": "MySQL version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "mysql_version_string": {
+                        "description": "MySQL version string.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "default_timezone": {
+                        "description": "Default timezone.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "fsockopen_or_curl_enabled": {
+                        "description": "Is fsockopen/cURL enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "soapclient_enabled": {
+                        "description": "Is SoapClient class enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "domdocument_enabled": {
+                        "description": "Is DomDocument class enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "gzip_enabled": {
+                        "description": "Is GZip enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "mbstring_enabled": {
+                        "description": "Is mbstring enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "remote_post_successful": {
+                        "description": "Remote POST successful?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "remote_post_response": {
+                        "description": "Remote POST response.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "remote_get_successful": {
+                        "description": "Remote GET successful?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "remote_get_response": {
+                        "description": "Remote GET response.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    }
+                }
+            },
+            "database": {
+                "description": "Database.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "wc_database_version": {
+                        "description": "WC database version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "database_prefix": {
+                        "description": "Database prefix.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "maxmind_geoip_database": {
+                        "description": "MaxMind GeoIP database.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "database_tables": {
+                        "description": "Database tables.",
+                        "type": "array",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "active_plugins": {
+                "description": "Active plugins.",
+                "type": "array",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "plugin": {
+                            "description": "Plugin basename. The path to the main plugin file relative to the plugins directory.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of the plugin.",
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "Current plugin version.",
+                            "type": "string"
+                        },
+                        "version_latest": {
+                            "description": "Latest available plugin version.",
+                            "type": "string"
+                        },
+                        "url": {
+                            "description": "Plugin URL.",
+                            "type": "string"
+                        },
+                        "author_name": {
+                            "description": "Plugin author name.",
+                            "type": "string"
+                        },
+                        "author_url": {
+                            "description": "Plugin author URL.",
+                            "type": "string"
+                        },
+                        "network_activated": {
+                            "description": "Whether the plugin can only be activated network-wide.",
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "inactive_plugins": {
+                "description": "Inactive plugins.",
+                "type": "array",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "plugin": {
+                            "description": "Plugin basename. The path to the main plugin file relative to the plugins directory.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of the plugin.",
+                            "type": "string"
+                        },
+                        "version": {
+                            "description": "Current plugin version.",
+                            "type": "string"
+                        },
+                        "version_latest": {
+                            "description": "Latest available plugin version.",
+                            "type": "string"
+                        },
+                        "url": {
+                            "description": "Plugin URL.",
+                            "type": "string"
+                        },
+                        "author_name": {
+                            "description": "Plugin author name.",
+                            "type": "string"
+                        },
+                        "author_url": {
+                            "description": "Plugin author URL.",
+                            "type": "string"
+                        },
+                        "network_activated": {
+                            "description": "Whether the plugin can only be activated network-wide.",
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "dropins_mu_plugins": {
+                "description": "Dropins & MU plugins.",
+                "type": "array",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "string"
+                }
+            },
+            "theme": {
+                "description": "Theme.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "name": {
+                        "description": "Theme name.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "version": {
+                        "description": "Theme version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "version_latest": {
+                        "description": "Latest version of theme.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "author_url": {
+                        "description": "Theme author URL.",
+                        "type": "string",
+                        "format": "uri",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "is_child_theme": {
+                        "description": "Is this theme a child theme?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "is_block_theme": {
+                        "description": "Is this theme a block theme?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "has_woocommerce_support": {
+                        "description": "Does the theme declare WooCommerce support?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "has_woocommerce_file": {
+                        "description": "Does the theme have a woocommerce.php file?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "has_outdated_templates": {
+                        "description": "Does this theme have outdated templates?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "overrides": {
+                        "description": "Template overrides.",
+                        "type": "array",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "parent_name": {
+                        "description": "Parent theme name.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "parent_version": {
+                        "description": "Parent theme version.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "parent_author_url": {
+                        "description": "Parent theme author URL.",
+                        "type": "string",
+                        "format": "uri",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    }
+                }
+            },
+            "settings": {
+                "description": "Settings.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "api_enabled": {
+                        "description": "Legacy REST API enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "force_ssl": {
+                        "description": "SSL forced?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "currency": {
+                        "description": "Currency.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "currency_symbol": {
+                        "description": "Currency symbol.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "currency_position": {
+                        "description": "Currency position.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "thousand_separator": {
+                        "description": "Thousand separator.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "decimal_separator": {
+                        "description": "Decimal separator.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "number_of_decimals": {
+                        "description": "Number of decimals.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "geolocation_enabled": {
+                        "description": "Geolocation enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "taxonomies": {
+                        "description": "Taxonomy terms for product/order statuses.",
+                        "type": "array",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "product_visibility_terms": {
+                        "description": "Terms in the product visibility taxonomy.",
+                        "type": "array",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "wccom_connected": {
+                        "description": "Is store connected to WooCommerce.com?",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "enforce_approved_download_dirs": {
+                        "description": "Enforce approved download directories?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "HPOS_enabled": {
+                        "description": "Is HPOS enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "order_datastore": {
+                        "description": "Order datastore.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "HPOS_sync_enabled": {
+                        "description": "Is HPOS sync enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "enabled_features": {
+                        "description": "Enabled features.",
+                        "type": "array",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    }
+                }
+            },
+            "security": {
+                "description": "Security.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "secure_connection": {
+                        "description": "Is the connection to your store secure?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "hide_errors": {
+                        "description": "Hide errors from visitors?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    }
+                }
+            },
+            "pages": {
+                "description": "WooCommerce pages.",
+                "type": "array",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "page_name": {
+                            "type": "string"
+                        },
+                        "page_id": {
+                            "type": "string"
+                        },
+                        "page_set": {
+                            "type": "boolean"
+                        },
+                        "page_exists": {
+                            "type": "boolean"
+                        },
+                        "page_visible": {
+                            "type": "boolean"
+                        },
+                        "shortcode": {
+                            "type": "string"
+                        },
+                        "block": {
+                            "type": "string"
+                        },
+                        "shortcode_required": {
+                            "type": "boolean"
+                        },
+                        "shortcode_present": {
+                            "type": "boolean"
+                        },
+                        "block_present": {
+                            "type": "boolean"
+                        },
+                        "block_required": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            },
+            "post_type_counts": {
+                "description": "Total post count.",
+                "type": "array",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "items": {
+                    "type": "string"
+                }
+            },
+            "logging": {
+                "description": "Logging.",
+                "type": "object",
+                "context": [
+                    "view"
+                ],
+                "readonly": true,
+                "properties": {
+                    "logging_enabled": {
+                        "description": "Is logging enabled?",
+                        "type": "boolean",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "default_handler": {
+                        "description": "The logging handler class.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "retention_period_days": {
+                        "description": "The number of days log entries are retained.",
+                        "type": "integer",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "level_threshold": {
+                        "description": "Minimum severity level.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    },
+                    "log_directory_size": {
+                        "description": "The size of the log directory.",
+                        "type": "string",
+                        "context": [
+                            "view"
+                        ],
+                        "readonly": true
+                    }
+                }
+            }
+        }
+    },
+    "_links": {
+        "self": [
+            {
+                "href": "https://abhigaming5z.capybaara.com/wp-json/wc/v3/system_status"
+            }
+        ]
+    }
+}

@@ -1,0 +1,416 @@
+{
+    "namespace": "wc/v3",
+    "methods": [
+        "GET",
+        "POST"
+    ],
+    "endpoints": [
+        {
+            "methods": [
+                "GET"
+            ],
+            "args": {
+                "context": {
+                    "description": "Scope under which the request is made; determines fields present in response.",
+                    "type": "string",
+                    "enum": [
+                        "view",
+                        "edit"
+                    ],
+                    "default": "view",
+                    "required": false
+                },
+                "page": {
+                    "description": "Current page of the collection.",
+                    "type": "integer",
+                    "default": 1,
+                    "minimum": 1,
+                    "required": false
+                },
+                "per_page": {
+                    "description": "Maximum number of items to be returned in result set.",
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 1,
+                    "maximum": 100,
+                    "required": false
+                },
+                "search": {
+                    "description": "Limit results to those matching a string.",
+                    "type": "string",
+                    "required": false
+                },
+                "exclude": {
+                    "description": "Ensure result set excludes specific IDs.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "include": {
+                    "description": "Limit result set to specific ids.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "default": [],
+                    "required": false
+                },
+                "offset": {
+                    "description": "Offset the result set by a specific number of items. Applies to hierarchical taxonomies only.",
+                    "type": "integer",
+                    "required": false
+                },
+                "order": {
+                    "description": "Order sort attribute ascending or descending.",
+                    "type": "string",
+                    "default": "asc",
+                    "enum": [
+                        "asc",
+                        "desc"
+                    ],
+                    "required": false
+                },
+                "orderby": {
+                    "description": "Sort collection by resource attribute.",
+                    "type": "string",
+                    "default": "name",
+                    "enum": [
+                        "id",
+                        "include",
+                        "name",
+                        "slug",
+                        "term_group",
+                        "description",
+                        "count"
+                    ],
+                    "required": false
+                },
+                "hide_empty": {
+                    "description": "Whether to hide resources not assigned to any products.",
+                    "type": "boolean",
+                    "default": false,
+                    "required": false
+                },
+                "parent": {
+                    "description": "Limit result set to resources assigned to a specific parent. Applies to hierarchical taxonomies only.",
+                    "type": "integer",
+                    "required": false
+                },
+                "product": {
+                    "description": "Limit result set to resources assigned to a specific product.",
+                    "type": "integer",
+                    "default": null,
+                    "required": false
+                },
+                "slug": {
+                    "description": "Limit result set to resources with a specific slug.",
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "required": false
+                }
+            }
+        },
+        {
+            "methods": [
+                "POST"
+            ],
+            "args": {
+                "name": {
+                    "type": "string",
+                    "description": "Name for the resource.",
+                    "required": true
+                },
+                "slug": {
+                    "description": "An alphanumeric identifier for the resource unique to its type.",
+                    "type": "string",
+                    "required": false
+                },
+                "parent": {
+                    "description": "The ID for the parent of the resource.",
+                    "type": "integer",
+                    "required": false
+                },
+                "description": {
+                    "description": "HTML description of the resource.",
+                    "type": "string",
+                    "required": false
+                },
+                "display": {
+                    "default": "default",
+                    "description": "Category archive display type.",
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "products",
+                        "subcategories",
+                        "both"
+                    ],
+                    "required": false
+                },
+                "image": {
+                    "description": "Image data.",
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "description": "Image ID.",
+                            "type": "integer",
+                            "context": [
+                                "view",
+                                "edit"
+                            ]
+                        },
+                        "date_created": {
+                            "description": "The date the image was created, in the site's timezone.",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "context": [
+                                "view",
+                                "edit"
+                            ],
+                            "readonly": true
+                        },
+                        "date_created_gmt": {
+                            "description": "The date the image was created, as GMT.",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "context": [
+                                "view",
+                                "edit"
+                            ],
+                            "readonly": true
+                        },
+                        "date_modified": {
+                            "description": "The date the image was last modified, in the site's timezone.",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "context": [
+                                "view",
+                                "edit"
+                            ],
+                            "readonly": true
+                        },
+                        "date_modified_gmt": {
+                            "description": "The date the image was last modified, as GMT.",
+                            "type": [
+                                "null",
+                                "string"
+                            ],
+                            "context": [
+                                "view",
+                                "edit"
+                            ],
+                            "readonly": true
+                        },
+                        "src": {
+                            "description": "Image URL.",
+                            "type": "string",
+                            "format": "uri",
+                            "context": [
+                                "view",
+                                "edit"
+                            ]
+                        },
+                        "name": {
+                            "description": "Image name.",
+                            "type": "string",
+                            "context": [
+                                "view",
+                                "edit"
+                            ]
+                        },
+                        "alt": {
+                            "description": "Image alternative text.",
+                            "type": "string",
+                            "context": [
+                                "view",
+                                "edit"
+                            ]
+                        }
+                    },
+                    "required": false
+                }
+            }
+        }
+    ],
+    "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "title": "product_cat",
+        "type": "object",
+        "properties": {
+            "id": {
+                "description": "Unique identifier for the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "name": {
+                "description": "Category name.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "slug": {
+                "description": "An alphanumeric identifier for the resource unique to its type.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "parent": {
+                "description": "The ID for the parent of the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "description": {
+                "description": "HTML description of the resource.",
+                "type": "string",
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "display": {
+                "description": "Category archive display type.",
+                "type": "string",
+                "default": "default",
+                "enum": [
+                    "default",
+                    "products",
+                    "subcategories",
+                    "both"
+                ],
+                "context": [
+                    "view",
+                    "edit"
+                ]
+            },
+            "image": {
+                "description": "Image data.",
+                "type": "object",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Image ID.",
+                        "type": "integer",
+                        "context": [
+                            "view",
+                            "edit"
+                        ]
+                    },
+                    "date_created": {
+                        "description": "The date the image was created, in the site's timezone.",
+                        "type": "date-time",
+                        "context": [
+                            "view",
+                            "edit"
+                        ],
+                        "readonly": true
+                    },
+                    "date_created_gmt": {
+                        "description": "The date the image was created, as GMT.",
+                        "type": "date-time",
+                        "context": [
+                            "view",
+                            "edit"
+                        ],
+                        "readonly": true
+                    },
+                    "date_modified": {
+                        "description": "The date the image was last modified, in the site's timezone.",
+                        "type": "date-time",
+                        "context": [
+                            "view",
+                            "edit"
+                        ],
+                        "readonly": true
+                    },
+                    "date_modified_gmt": {
+                        "description": "The date the image was last modified, as GMT.",
+                        "type": "date-time",
+                        "context": [
+                            "view",
+                            "edit"
+                        ],
+                        "readonly": true
+                    },
+                    "src": {
+                        "description": "Image URL.",
+                        "type": "string",
+                        "format": "uri",
+                        "context": [
+                            "view",
+                            "edit"
+                        ]
+                    },
+                    "name": {
+                        "description": "Image name.",
+                        "type": "string",
+                        "context": [
+                            "view",
+                            "edit"
+                        ]
+                    },
+                    "alt": {
+                        "description": "Image alternative text.",
+                        "type": "string",
+                        "context": [
+                            "view",
+                            "edit"
+                        ]
+                    }
+                }
+            },
+            "menu_order": {
+                "description": "Menu order, used to custom sort the term.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            },
+            "count": {
+                "description": "Number of published products for the resource.",
+                "type": "integer",
+                "context": [
+                    "view",
+                    "edit"
+                ],
+                "readonly": true
+            }
+        }
+    },
+    "_links": {
+        "self": [
+            {
+                "href": "https://abhigaming5z.capybaara.com/wp-json/wc/v3/products/categories"
+            }
+        ]
+    }
+}
