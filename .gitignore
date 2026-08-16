@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Aider
+.aider.*
+
+# Rune
+.rune/*
+!.rune/config
+!.rune/index
+.agents/rules/language-python
+.agents/skills/python-logging/modules/python-logging
+.agents/skills/python-event/modules/python-event
